@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,10 +25,18 @@ Route::get('/ArrayWriteOut', function () {
     ]);
 });
 
-Route::get('/post/{cim}', function ($cim) {
+/*Route::get('/post/{cim}', function ($cim) {
     $tomb = ["elso", "masodik","harmadik"];
     return view('post',[
         "title" => $tomb[$cim] ?? abort(404)
     ]);
-});
+});*/
 
+Route::get('/post/{cim}', [
+    PostController::class,
+    "show"
+]);
+
+Route::get('/pages/projects', function () {
+    return view('projects');
+});

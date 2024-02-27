@@ -1,0 +1,18 @@
+//Creating Laravel project
+composer create-project laravel/laravel example-app
+
+
+//Start the project
+cd example-app
+ 
+php artisan serve
+
+
+//Creating a controller
+php artisan make:controller PostController
+
+
+//installing folio
+composer require laravel/folio
+
+php artisan folio:install
