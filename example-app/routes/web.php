@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/ArrayWriteOut', function () {
+    $tomb = ["elso", "masodik","harmadik"];
+    return view('ArrayView', [
+        "arr"=>$tomb
+    ]);
+});
+
+Route::get('/post/{cim}', function ($cim) {
+    $tomb = ["elso", "masodik","harmadik"];
+    return view('post',[
+        "title" => $tomb[$cim] ?? abort(404)
+    ]);
+});
+
