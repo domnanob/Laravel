@@ -16,3 +16,8 @@ php artisan make:controller PostController
 composer require laravel/folio
 
 php artisan folio:install
+
+
+//create test
+php artisan make:test mytest
+php artisan make:test mytest -u
